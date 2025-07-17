@@ -8,6 +8,7 @@ import ProductDetails from "./nonAuth/landing/ProductDetails";
 import MainLayout from "./layout/MainLayout";
 import Cart from "./nonAuth/Cart";
 import { Toaster } from "react-hot-toast";
+import Wishlist from "./nonAuth/WishList";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/products" element={<Products />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/wishlist" element={<Wishlist />} />
         </Route>
       </Routes>
     </>

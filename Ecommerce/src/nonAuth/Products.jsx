@@ -9,6 +9,7 @@ function Products() {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentBannerIndex, setCurrentBannerIndex] = useState(0);
   const [selectedBrand, setSelectedBrand] = useState("All");
+  const [selectedColor, setSelectedColor] = useState("");
   const intervalRef = useRef(null);
 
   const bannerImages = [
@@ -31,6 +32,8 @@ function Products() {
 
   // Extract unique brands from products
   const brands = ["All", ...new Set(products.map((product) => product.brand))];
+  // Extract unique colors from products
+  const colors = [...new Set(products.flatMap((product) => product.color))];
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -41,7 +44,6 @@ function Products() {
 
     fetchProducts();
 
-    // Corrected banner rotation logic
     intervalRef.current = setInterval(() => {
       setCurrentBannerIndex((prev) => (prev + 1) % bannerImages.length);
     }, 3000);
@@ -50,18 +52,24 @@ function Products() {
   }, []);
 
   useEffect(() => {
-    if (selectedBrand === "All") {
-      setFilteredProducts(products);
-    } else {
-      setFilteredProducts(
-        products.filter((product) => product.brand === selectedBrand)
-      );
+    let result = products;
+
+    // Apply brand filter
+    if (selectedBrand !== "All") {
+      result = result.filter((product) => product.brand === selectedBrand);
     }
-  }, [selectedBrand, products]);
+
+    // Apply color filter if selected
+    if (selectedColor) {
+      result = result.filter((product) => product.color === selectedColor);
+    }
+
+    setFilteredProducts(result);
+  }, [selectedBrand, selectedColor, products]);
 
   return (
     <div className="min-h-screen bg-ivory-50">
-      {/* Banner section - Removed fade effect */}
+      {/* Banner section */}
       <div className="w-full h-[75vh] relative overflow-hidden">
         <img
           src={bannerImages[currentBannerIndex].url}
@@ -79,23 +87,50 @@ function Products() {
         </div>
       </div>
 
-      {/* Rest of your existing code remains exactly the same */}
-      <div className="w-[75%] mx-auto py-8 flex justify-center space-x-6">
-        {brands.map((brand) => (
-          <button
-            key={brand}
-            onClick={() => setSelectedBrand(brand)}
-            className={`px-4 py-2 text-sm uppercase tracking-wider transition-colors ${
-              selectedBrand === brand
-                ? "text-gold-400 border-b-2 border-gold-400"
-                : "text-gray-500 hover:text-gray-700"
-            }`}
-          >
-            {brand}
-          </button>
-        ))}
+      {/* Filter section */}
+      <div className="w-[75%] mx-auto py-8 space-y-8">
+        {/* Brand filter */}
+        <div className="flex flex-col items-center">
+          <div className="flex flex-wrap justify-center gap-6">
+            {brands.map((brand) => (
+              <button
+                key={brand}
+                onClick={() => setSelectedBrand(brand)}
+                className={`px-4 py-2 text-sm uppercase tracking-wider transition-colors ${
+                  selectedBrand === brand
+                    ? "text-gold-400 border-b-2 border-gold-400"
+                    : "text-gray-500 hover:text-gray-700"
+                }`}
+              >
+                {brand}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Color filter */}
+        <div className="flex flex-col items-center">
+          <div className="flex flex-wrap justify-center gap-3 mr-2">
+            {colors.map((color) => (
+              <button
+                key={color}
+                onClick={() =>
+                  setSelectedColor(selectedColor === color ? "" : color)
+                }
+                className={`px-4 py-2 text-[12px] uppercase tracking-wider transition-colors ${
+                  selectedColor === color
+                    ? "text-gold-400 border-b-2 border-gold-400"
+                    : "text-gray-500 hover:text-gray-700"
+                }`}
+              >
+                {color}
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
 
+      {/* Products grid */}
       <div className="w-[75%] mx-auto pb-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           {filteredProducts.map((product) => (

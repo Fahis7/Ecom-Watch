@@ -169,7 +169,7 @@ function Home() {
                 </p>
                 <Link
                   to={`/products`}
-                  className="bg-black border  text-white px-6 py-2 hover:bg-white hover:text-black transition duration-300 font-light tracking-wider opacity-85"
+                  className=" bg-gray-700 border  text-white px-6 py-2 hover:bg-white hover:text-black transition duration-300 font-light tracking-wider opacity-85"
                 >
                   Be Our Fam
                 </Link>

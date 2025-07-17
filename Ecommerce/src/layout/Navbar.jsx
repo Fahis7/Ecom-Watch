@@ -1,13 +1,8 @@
 import React, { useState, useEffect, useContext, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import {
-  FaShoppingCart,
-  FaHeart,
-  FaSearch,
-  FaTimes,
-  FaBars,
-} from "react-icons/fa";
-import { BsPerson, BsBoxArrowRight } from "react-icons/bs";
+import { HiOutlineShoppingCart } from "react-icons/hi";
+import { FaRegHeart, FaTimes, FaBars } from "react-icons/fa";
+import { BsBoxArrowRight, BsPerson,} from "react-icons/bs";
 import { AuthContext } from "../common/context/Authprovider";
 
 function Navbar() {
@@ -26,10 +21,6 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  const handleProfile = () => {
-    if (!user) navigate("/login");
-  };
 
   const handleLogout = () => {
     setUser(null);
@@ -78,151 +69,150 @@ function Navbar() {
 
   return (
     <nav className={navbarClasses}>
-  <div className="flex justify-between items-center px-6 lg:px-12 relative">
-    {/* Mobile Menu Toggle - Thinner icons */}
-    <button
-      onClick={() => setIsMenuOpen(!isMenuOpen)}
-      className={`lg:hidden ${iconColor}`}
-    >
-      {isMenuOpen ? (
-        <FaTimes className="text-xl !font-thin" /> 
-      ) : (
-        <FaBars className="text-xl !font-thin" />
-      )}
-    </button>
-
-    {/* Logo remains unchanged */}
-    <Link
-      to="/"
-      className={`text-2xl lg:text-3xl font-serif italic tracking-wider lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 ${iconColor}`}
-    >
-      HOROLOGIE
-    </Link>
-
-    {/* Desktop Navigation unchanged */}
-    <ul className="hidden lg:flex items-center space-x-8">
-      <li>
-        <Link to="/products" className={linkStyle}>
-          Collections
-        </Link>
-      </li>
-    </ul>
-
-    {/* Icons section with ultra-thin styling */}
-    <ul className="flex items-center space-x-4 lg:space-x-6">
-      {/* Search icon - ultra thin */}
-      <li className="hidden lg:block">
-        <Link to="/search">
-          <FaSearch className={`text-lg ${iconColor} !font-thin`} />
-        </Link>
-      </li>
-
-      {/* Wishlist icon - ultra thin */}
-      <li className="relative hidden lg:block">
-        <Link to="/wishlist">
-          <FaHeart className={`text-lg ${iconColor} !font-thin`} />
-          <span className="absolute -top-2 -right-2 bg-gold-500 text-black text-xs w-5 h-5 flex items-center justify-center rounded-full font-light">
-            2
-          </span>
-        </Link>
-      </li>
-
-      {/* Cart icon - ultra thin */}
-      <li className="relative">
-        <Link to="/cart">
-          <FaShoppingCart className={`text-xl ${iconColor} !font-thin`} />
-          {cartCount > 0 && (
-            <span className="absolute -top-2 -right-2 backdrop-blur-sm bg-white/30 text-black text-[11px] rounded-full px-1.5 font-medium shadow-sm">
-              {cartCount}
-            </span>
-          )}
-        </Link>
-      </li>
-
-      {/* Profile section with bold username */}
-      <li className="relative" ref={dropdownRef}>
-        {user ? (
-          <div
-            onClick={toggleDropdown}
-            className={`text-base lg:text-lg font-bold px-2 cursor-pointer ${iconColor}`} 
-          >
-            {user.name}
-          </div>
-        ) : (
-          <Link to="/login" onClick={handleProfile}>
-            <BsPerson className={`text-lg ${iconColor} !font-thin`} /> {/* Ultra thin */}
-          </Link>
-        )}
-
-        {dropdownOpen && user && (
-          <div className="absolute right-0 mt-2 w-40 bg-white rounded shadow-md z-50">
-            <button
-              onClick={handleLogout}
-              className="flex items-center px-4 py-2 w-full text-sm text-gray-700 hover:bg-gray-100"
-            >
-              <BsBoxArrowRight className="mr-2 !font-thin" /> {/* Ultra thin */}
-              Logout
-            </button>
-          </div>
-        )}
-      </li>
-    </ul>
-  </div>
-
-  {/* Mobile Menu with thin icons */}
-  {isMenuOpen && (
-    <div
-      className={`lg:hidden fixed top-[72px] inset-x-0 z-40 p-6 space-y-4 ${
-        isScrollEffectPage && !isScrolled
-          ? "bg-black text-white"
-          : "bg-white text-black"
-      }`}
-    >
-      <Link
-        to="/products"
-        onClick={() => setIsMenuOpen(false)}
-        className="block border-b pb-3 uppercase text-sm tracking-wider"
-      >
-        Collections
-      </Link>
-      <Link
-        to="/heritage"
-        onClick={() => setIsMenuOpen(false)}
-        className="block border-b pb-3 uppercase text-sm tracking-wider"
-      >
-        Our Heritage
-      </Link>
-      <Link
-        to="/search"
-        onClick={() => setIsMenuOpen(false)}
-        className="block border-b pb-3 uppercase text-sm tracking-wider"
-      >
-        Search
-      </Link>
-      {user ? (
+      <div className="flex justify-between items-center px-6 lg:px-12 relative">
+        {/* Mobile Menu Toggle */}
         <button
-          onClick={() => {
-            handleLogout();
-            setIsMenuOpen(false);
-          }}
-          className="flex items-center gap-2 pt-3 text-sm uppercase"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className={`lg:hidden ${iconColor}`}
         >
-          <BsBoxArrowRight className="!font-thin" /> {/* Ultra thin */}
-          Logout
+          {isMenuOpen ? (
+            <FaTimes className="text-xl" />
+          ) : (
+            <FaBars className="text-xl" />
+          )}
         </button>
-      ) : (
+
+        {/* Logo */}
         <Link
-          to="/login"
-          onClick={() => setIsMenuOpen(false)}
-          className="block pt-3 text-sm uppercase"
+          to="/"
+          className={`text-2xl lg:text-3xl font-serif italic tracking-wider lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 ${iconColor}`}
         >
-          <BsPerson className="inline mr-2 !font-thin" /> {/* Ultra thin */}
-          Login
+          HOROLOGIE
         </Link>
+
+        {/* Desktop Navigation */}
+        <ul className="hidden lg:flex items-center space-x-8">
+          <li>
+            <Link to="/products" className={linkStyle}>
+              Collections
+            </Link>
+          </li>
+        </ul>
+
+        {/* Desktop Icons */}
+        <ul className="flex items-center space-x-4 lg:space-x-6">
+          <li className="relative hidden lg:block">
+            <Link to="/wishlist">
+              <FaRegHeart className={`text-lg ${iconColor}`} />
+            </Link>
+          </li>
+
+          <li className="relative hidden lg:block">
+            <Link to="/cart">
+              <HiOutlineShoppingCart className={`text-xl ${iconColor}`} />
+              {cartCount > 0 && (
+                <span className="absolute -top-2 -right-2 backdrop-blur-sm bg-white/30 text-black text-[11px] rounded-full px-1.5 font-medium shadow-sm">
+                  {cartCount}
+                </span>
+              )}
+            </Link>
+          </li>
+
+          {/* Desktop User Area */}
+          <li className="relative hidden lg:block" ref={dropdownRef}>
+            {user ? (
+              <>
+                <div
+                  onClick={toggleDropdown}
+                  className={`text-base font-light cursor-pointer ${iconColor}`}
+                >
+                  {user.name}
+                </div>
+                {dropdownOpen && (
+                  <div className="absolute right-0 mt-2 w-44 bg-white rounded-lg shadow-xl z-50">
+                    <button
+                      onClick={handleLogout}
+                      className="flex items-center gap-2 px-4 py-2 w-full text-sm text-gray-800 font-light hover:bg-gray-50 hover:text-black rounded-md transition-colors duration-200"
+                    >
+                      <BsBoxArrowRight className="w-4 h-4" />
+                      Logout
+                    </button>
+                  </div>
+                )}
+              </>
+            ) : (
+              <Link to="/login">
+                <BsPerson className={`text-2xl ${iconColor}`} />
+              </Link>
+            )}
+          </li>
+        </ul>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div
+          className={`lg:hidden fixed top-[72px] inset-x-0 z-40 p-6 space-y-4 ${
+            isScrollEffectPage && !isScrolled
+              ? "bg-white text-black"
+              : "bg-white text-black"
+          }`}
+        >
+          <Link
+            to="/products"
+            onClick={() => setIsMenuOpen(false)}
+            className="block border-b pb-3 uppercase text-sm tracking-wider"
+          >
+            Collections
+          </Link>
+
+          <Link
+            to="/wishlist"
+            onClick={() => setIsMenuOpen(false)}
+            className="block border-b pb-3 uppercase text-sm tracking-wider flex items-center gap-2"
+          >
+            <FaRegHeart />
+            Wishlist
+          </Link>
+
+          <Link
+            to="/cart"
+            onClick={() => setIsMenuOpen(false)}
+            className="block border-b pb-3 uppercase text-sm tracking-wider flex items-center gap-2"
+          >
+            <HiOutlineShoppingCart />
+            Cart
+          </Link>
+
+          {user ? (
+            <>
+              <button
+                onClick={() => {
+                  handleLogout();
+                  setIsMenuOpen(false);
+                }}
+                className="flex items-center gap-2 pt-3 text-sm uppercase"
+              >
+                <BsBoxArrowRight />
+                Logout
+              </button>
+              <div className="text-sm pt-2 text-gray-500">
+                Logged in as: <strong>{user.name}</strong>
+              </div>
+            </>
+          ) : (
+            <Link
+              to="/login"
+              onClick={() => setIsMenuOpen(false)}
+              className="block pt-3 text-sm uppercase flex items-center gap-2"
+            >
+              <BsPersonCircle />
+              Login
+            </Link>
+          )}
+        </div>
       )}
-    </div>
-  )}
-</nav>
+    </nav>
   );
 }
 

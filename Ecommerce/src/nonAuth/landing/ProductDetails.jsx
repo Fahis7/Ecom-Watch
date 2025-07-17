@@ -50,6 +50,39 @@ const ProductDetails = () => {
     }
   };
 
+  // ✅ Add to wishlist handler
+  const handleAddWishlist = async () => {
+    if (!user) {
+      navigate("/login");
+      return;
+    }
+
+    const exists = user.wishlist?.some((item) => item.id === product.id);
+
+    if (exists) {
+      toast.error("Already in wishlist.");
+      return;
+    }
+
+    const updatedWishlist = [...(user.wishlist || []), product];
+
+    try {
+      const res = await axios.patch(`http://localhost:5000/users/${user.id}`, {
+        wishlist: updatedWishlist,
+      });
+
+      if (res.status === 200) {
+        setUser({ ...user, wishlist: updatedWishlist });
+        toast.success("Added to wishlist!");
+      } else {
+        toast.error("Failed to update wishlist.");
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error("Something went wrong.");
+    }
+  };
+
   useEffect(() => {
     fetch(`${ProductsApi}/${id}`)
       .then((res) => res.json())
@@ -60,7 +93,7 @@ const ProductDetails = () => {
 
   return (
     <>
-      <div className="min-h-screen bg-white px-6 py-16 flex items-center justify-center">
+      <div className="min-h-screen bg-white px-6 py-16 mt-14 flex items-center justify-center">
         <div className="max-w-6xl w-full flex flex-col md:flex-row items-center gap-16">
           {/* Left: Product Image */}
           <div className="w-full md:w-2/4">
@@ -82,12 +115,15 @@ const ProductDetails = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
               <button
                 onClick={handleAddCart}
-                className="px-6 py-3 bg-black hover:bg-gray-800 text-white uppercase tracking-wider opacity-85"
+                className="px-6 py-3 bg-gray-700 hover:bg-gray-800 text-white uppercase tracking-wider opacity-85"
               >
                 Add to Cart
               </button>
 
-              <button className="px-6 py-3 border border-black text-black hover:bg-black hover:text-white transition-all">
+              <button
+                onClick={handleAddWishlist}
+                className="px-6 py-3 border border-black text-black hover:bg-gray-600 hover:text-white transition-all"
+              >
                 <FaHeart className="inline mr-2" />
                 Add to Wishlist
               </button>
@@ -123,6 +159,11 @@ const ProductDetails = () => {
                   </div>
                 </div>
               </div>
+            </div>
+            
+            {/* Added text below thumbnails */}
+            <div className="text-center text-sm text-gray-500 mt-2">
+              Five year warranty • Swiss made
             </div>
           </div>
         </div>
