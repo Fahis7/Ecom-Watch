@@ -18,11 +18,9 @@ function Register() {
       .matches(/^[a-zA-Z\s]+$/, "Only letters and spaces are allowed")
       .min(3, "Name must be at least 3 characters")
       .required("Name is required"),
-
     email: Yup.string()
       .matches(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/, "Enter a valid email address")
       .required("Email is required"),
-
     password: Yup.string()
       .matches(
         /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
@@ -53,31 +51,31 @@ function Register() {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center">
+    <div className="relative min-h-screen flex items-center justify-center overflow-auto">
       <div
-        className="absolute inset-0 bg-cover bg-bottom filter"
+        className="absolute inset-0 bg-cover bg-bottom"
         style={{
           backgroundImage: `url(https://i.pinimg.com/1200x/58/96/b1/5896b1e70319bda42a39c3c60fef4ff1.jpg)`,
         }}
       ></div>
       <div className="absolute inset-0 bg-black opacity-60"></div>
 
-      <div className="relative z-10 w-full px-[15%]">
+      <div className="relative z-10 w-full px-4 sm:px-6 md:px-10 lg:px-[15%] py-10">
         <motion.div
           initial={{ opacity: 0, x: -90 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="bg-white/20 backdrop-blur-md rounded-[12px] shadow-xl flex overflow-hidden max-w-5xl h-[500px] mx-auto"
+          className="bg-white/20 backdrop-blur-md rounded-[12px] shadow-xl flex flex-col lg:flex-row overflow-hidden max-w-5xl mx-auto"
         >
           {/* Left Form */}
-          <div className="w-1/2 p-8 flex flex-col justify-center text-white drop-shadow-md">
+          <div className="w-full lg:w-1/2 p-6 sm:p-8 flex flex-col justify-center text-white drop-shadow-md">
             <h2 className="text-2xl font-semibold text-center mb-6">
               Create a New Account
             </h2>
 
             <Formik
               initialValues={initialValues}
-              validationSet={validationSet}
+              validationSchema={validationSet}
               onSubmit={onSubmit}
             >
               {({ isSubmitting }) => (
@@ -124,11 +122,7 @@ function Register() {
                         onClick={() => setShowPassword(!showPassword)}
                         className="absolute right-3 top-1/2 -translate-y-1/2 text-white"
                       >
-                        {showPassword ? (
-                          <EyeOff size={18} />
-                        ) : (
-                          <Eye size={18} />
-                        )}
+                        {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                       </button>
                     </div>
                     <ErrorMessage
@@ -163,7 +157,7 @@ function Register() {
 
           {/* Right Image */}
           <div
-            className="w-1/2 bg-cover bg-center"
+            className="w-full lg:w-1/2 h-64 lg:h-auto bg-cover bg-center"
             style={{
               backgroundImage: `url(https://media.rolex.com/image/upload/q_auto/f_auto/c_limit,w_1920/v1741014185/rolexcom/new-watches/2025/watches/new-dials/new-watches-2025-new-dials-gmt-master-ii-iron-eye-dial-m126715chnr-0002_2501stojan_002_rvb.jpg)`,
               backgroundSize: "200%",

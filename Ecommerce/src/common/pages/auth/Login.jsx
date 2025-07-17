@@ -10,17 +10,17 @@ import { AuthContext } from "../../context/Authprovider";
 
 function Login() {
   const navigate = useNavigate();
-  useEffect(()=>{
-    const storedUser=JSON.parse(localStorage.getItem("user"))
-    if(storedUser){
-      navigate("/")
-    }else{
-    navigate("/login")
+  useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    if (storedUser) {
+      navigate("/");
+    } else {
+      navigate("/login");
     }
-  })
-  const {login}=useContext(AuthContext)
-  const [showPassword, setShowPassword] = useState(false);
+  }, []);
 
+  const { login } = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
 
   const initialValues = {
     email: "",
@@ -43,7 +43,7 @@ function Login() {
         alert("Invalid email or password");
         return;
       }
-      login({id:user.id,name:user.name,role:user.role})
+      login({ id: user.id, name: user.name, role: user.role });
       alert("Login successful!");
       navigate("/");
     } catch (err) {
@@ -55,7 +55,7 @@ function Login() {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center">
+    <div className="relative min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-16 lg:px-[15%]">
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -68,23 +68,23 @@ function Login() {
       <div className="absolute inset-0 bg-black opacity-10"></div>
 
       {/* Card */}
-      <div className="relative z-10 w-full px-[15%]">
+      <div className="relative z-10 w-full max-w-5xl">
         <motion.div
           initial={{ opacity: 0, x: 90 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="bg-white/20 backdrop-blur-md rounded-[12px] shadow-xl flex overflow-hidden max-w-5xl h-[500px] mx-auto"
+          className="bg-white/20 backdrop-blur-md rounded-[12px] shadow-xl flex flex-col md:flex-row overflow-hidden h-auto md:h-[500px]"
         >
           {/* Left Image */}
           <div
-            className="w-1/2 bg-cover bg-center"
+            className="w-full md:w-1/2 h-[200px] md:h-auto bg-cover bg-center"
             style={{
               backgroundImage: `url(https://i.pinimg.com/736x/4f/57/97/4f57971a3dea504cfe8da63ceee8e353.jpg)`,
             }}
           ></div>
 
           {/* Right Form */}
-          <div className="w-1/2 p-8 flex flex-col justify-center text-white drop-shadow-md">
+          <div className="w-full md:w-1/2 p-6 sm:p-8 flex flex-col justify-center text-white drop-shadow-md">
             <h2 className="text-2xl font-semibold text-center mb-6">
               Login to Your Account
             </h2>
@@ -147,7 +147,6 @@ function Login() {
               <Link
                 to="/signup"
                 className="text-white font-medium hover:underline"
-                style={{ textDecoration: "none" }}
               >
                 Sign Up
               </Link>

@@ -61,8 +61,6 @@ function Products() {
 
   return (
     <div className="min-h-screen bg-ivory-50">
-      <Navbar />
-
       {/* Banner section - Removed fade effect */}
       <div className="w-full h-[75vh] relative overflow-hidden">
         <img
@@ -109,7 +107,6 @@ function Products() {
           ))}
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

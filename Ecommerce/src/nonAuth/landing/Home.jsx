@@ -6,7 +6,7 @@ import Footer from "../../layout/Footer";
 
 function Home() {
   return (
-    <div className="bg-[#faf9f5]">
+    <div id="heritage" className="bg-[#faf9f5]">
       <Navbar />
       <div className="text-gray-800 font-serif">
         {/* Hero Section */}
@@ -187,7 +187,7 @@ function Home() {
           </div>
         </section>
       </div>
-      <Footer/>
+  
     </div>
   );
 }

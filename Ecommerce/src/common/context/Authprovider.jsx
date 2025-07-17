@@ -5,37 +5,46 @@ export const AuthContext = createContext();
 
 export default function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
-  const navigate=useNavigate()
+  const [cartCount, setCartCount] = useState(0);
+  const navigate = useNavigate();
+
   // Load user from localStorage on mount
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
-      setUser(JSON.parse(storedUser));
+      const parsedUser = JSON.parse(storedUser);
+      setUser(parsedUser);
+      setCartCount(
+        parsedUser.cart?.reduce((total, item) => total + item.quantity, 0) || 0
+      );
     }
   }, []);
 
-  // Sync user to localStorage on change
+  // Sync user and update cart count
   useEffect(() => {
     if (user) {
       localStorage.setItem("user", JSON.stringify(user));
+      setCartCount(
+        user.cart?.reduce((total, item) => total + item.quantity, 0) || 0
+      );
     } else {
       localStorage.removeItem("user");
+      setCartCount(0);
     }
   }, [user]);
 
-  // Login with userData
   const login = (userData) => {
     setUser(userData);
   };
-  // Logout clears user
+
   const logout = () => {
     setUser(null);
-    localStorage.removeItem("user")
-    navigate("/")
+    localStorage.removeItem("user");
+    navigate("/");
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, setUser, login, logout, cartCount }}>
       {children}
     </AuthContext.Provider>
   );

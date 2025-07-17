@@ -43,7 +43,98 @@
       "password": "12345678",
       "role": "User",
       "isBlock": false,
-      "cart": [],
+      "cart": [
+        {
+          "id": "r4",
+          "name": "Rolex Sky-Dweller",
+          "description": "Rolex Sky-Dweller is a sophisticated travel watch built for global citizens. It features a 42mm Oyster case, dual time zone display, and an annual calendar with Saros system. Powered by the Caliber 9001, it offers both elegance and technical mastery—a true blend of innovation and luxury.",
+          "price": 14250,
+          "brand": "Rolex",
+          "image": "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7-majesty/c_limit,w_1200/v1/catalogue/2025/upright-c/m336938-0005",
+          "in_stock": true,
+          "movement": "Caliber 3285",
+          "case_material": "Oystersteel",
+          "gallery": [
+            "https://i.pinimg.com/1200x/63/ad/11/63ad11bf53462bafa9cea48d3db43359.jpg",
+            "https://i.pinimg.com/736x/53/03/5f/53035f5909804526fcff936ecd61dfc4.jpg"
+          ],
+          "video": "https://media.rolex.com/video/upload/c_limit,q_auto:best,w_2880/vc_vp9/v1/rolexcom/collection/family-pages/classic-watches/sky-dweller/landing/videos/cover/long-film/video-cover_2022-retailer-film-sky-dweller-film-30-version-c-16x9-texted-clock-py-ly.webm",
+          "water_resistance": "100m",
+          "quantity": 3
+        },
+        {
+          "id": "r3",
+          "name": "Rolex GMT-Master II",
+          "description": "Rolex GMT-Master II is a legendary travel companion, designed for frequent flyers and adventurers. It features a 40mm Oystersteel case, bi-color Cerachrom bezel, and a 24-hour hand for dual time zones. Powered by the Caliber 3285 movement, it blends precision, durability, and timeless elegance—perfect for crossing time zones in style.",
+          "price": 14250,
+          "brand": "Rolex",
+          "image": "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7-majesty/c_limit,w_1200/v1/catalogue/2025/upright-c/m126710grnr-0003",
+          "in_stock": true,
+          "movement": "Caliber 3285",
+          "case_material": "Oystersteel",
+          "gallery": [
+            "https://i.pinimg.com/736x/c9/42/19/c942193d48894724a33fa6585008f49d.jpg",
+            "https://i.pinimg.com/736x/2f/a7/a9/2fa7a930fd747e749c4a3831d528c466.jpg"
+          ],
+          "video": "https://media.rolex.com/video/upload/c_limit,q_auto:good,w_2880/vc_vp9/v1/rolexcom/collection/family-pages/professional-watches/gmt-master-ii/family-page/videos/cover/2024/long-film/video-cover_2022-retailer-film-gmt-master-ii-film-30-version-c-16x9-texted-clock-py-ly.webm",
+          "water_resistance": "100m",
+          "quantity": 3
+        },
+        {
+          "id": "r5",
+          "name": "Rolex Deepsea",
+          "description": "Rolex Deepsea is a professional diver’s watch engineered for extreme depths. With a 44mm Oystersteel case, Helium Escape Valve, and water resistance up to 3,900 meters, it’s built for the deep. Powered by the Caliber 3235, it combines strength, precision, and iconic Rolex design.",
+          "price": 14250,
+          "brand": "Rolex",
+          "image": "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7-majesty/c_limit,w_1200/v1/catalogue/2025/upright-c/m136668lb-0001",
+          "in_stock": true,
+          "movement": "Caliber 3285",
+          "case_material": "Oystersteel",
+          "gallery": [
+            "https://i.pinimg.com/1200x/57/47/be/5747bea680bd9d965561ac9e386a8be6.jpg",
+            "https://i.pinimg.com/1200x/37/c2/14/37c214cc85b025adc9f8cec839b4addb.jpg"
+          ],
+          "video": "https://media.rolex.com/video/upload/c_limit,q_auto:best,w_2880/vc_vp9/v1/rolexcom/collection/family-pages/professional-watches/cosmograph-daytona/landing/videos/cover/long-film/video-cover_2022-retailer-film-cosmograph-daytona-film-30-version-c-16x9-texted-clock-py-ly.webm",
+          "water_resistance": "100m",
+          "quantity": 1
+        },
+        {
+          "id": "ra3",
+          "name": "Rado HyperChrome ",
+          "description": "Rado HyperChrome blends sporty elegance with cutting-edge ceramic technology. With its monobloc high-tech ceramic case, it offers exceptional durability, lightweight comfort, and a bold, contemporary look—built for performance and style.",
+          "price": 1950,
+          "brand": "Rado",
+          "image": "https://www.rado.com/media/catalog/product/h/y/hyperchrome_r32022152_sld_web.png?im=AspectCrop=(1300,1300),allowExpansion,location=(0.5,0.5);Resize=(1300,1300),aspect=fill;Crop=(0,0,1300,1300),gravity=Center",
+          "in_stock": true,
+          "movement": "Automatic R808",
+          "case_material": "High-tech ceramic",
+          "gallery": [
+            "https://i.pinimg.com/1200x/0e/2b/ca/0e2bca7c92dd3d8da2536d2d8b752aec.jpg",
+            "https://www.rado.com/media/catalog/product/h/y/hyperchrome_r32022152_wrist_c.png?im=AspectCrop=(1300,1300),allowExpansion,location=(0.5,0.5);Resize=(1300,1300),aspect=fill;Crop=(0,0,1300,1300),gravity=Center"
+          ],
+          "video": "https://v1.pinimg.com/videos/mc/expMp4/49/03/76/49037625f7a29946759f95fb7523b19c_t1.mp4",
+          "water_resistance": "50m",
+          "quantity": 2
+        },
+        {
+          "id": "ra4",
+          "name": "Rado Captain Cook",
+          "description": "Rado Captain Cook revives a vintage diving icon with modern flair. Featuring a rotating bezel, domed sapphire crystal, and automatic movement, it’s a bold blend of heritage design and contemporary craftsmanship—perfect for adventure seekers with style.",
+          "price": 1950,
+          "brand": "Rado",
+          "image": "https://www.rado.com/media/catalog/product/c/a/captaincook_r32190153_sld_web_1.png?im=AspectCrop=(1300,1300),allowExpansion,location=(0.5,0.5);Resize=(1300,1300),aspect=fill;Crop=(0,0,1300,1300),gravity=Center",
+          "in_stock": true,
+          "movement": "Automatic R808",
+          "case_material": "High-tech ceramic",
+          "gallery": [
+            "https://www.rado.com/media/sgecom_contentsystem/PDP_Images/cc_htc_chrono_r32190153_bico_carousel_3.jpg?im=Resize=(1024,682),aspect=fill;Crop=(0,0,1024,682),gravity=Center",
+            "https://www.rado.com/media/sgecom_contentsystem/PDP_Images/cc_htc_chrono_r32190153_bico_carousel_2.jpg?im=Resize=(1024,682),aspect=fill;Crop=(0,0,1024,682),gravity=Center"
+          ],
+          "video": "https://www.rado.com/media/sgecom_contentsystem/PDP_Images/Captain_Cook_HTC_Chronograph_chrono_bico_1920X1080.mp4",
+          "water_resistance": "50m",
+          "quantity": 1
+        }
+      ],
       "orders": [],
       "wishlist": [],
       "created_at": "2025-07-16T04:35:24.314Z"
@@ -83,8 +174,11 @@
       "image": "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7-majesty/c_limit,w_1200/v1/catalogue/2025/upright-c/m126610ln-0001",
       "in_stock": true,
       "movement": "Caliber 3235",
-      "gallery": ["https://i.pinimg.com/736x/2c/48/fb/2c48fb324a059e4e105f4c8e0da6d2d5.jpg", "https://i.pinimg.com/1200x/60/51/12/6051126258be4d305a3ee6e482d94150.jpg"],
-      "video": "https://media.rolex.com/video/upload/c_limit,q_auto:best,w_2880/vc_vp9/v1/rolexcom/collection/family-pages/professional-watches/submariner/family-page/2024/videos/cover/long-film/professional-watches-submariner-flagship-video-per_flag_submariner_21_a_60-uk_16x9-en-py-ly-cl-no_clock.webm", 
+      "gallery": [
+        "https://i.pinimg.com/736x/2c/48/fb/2c48fb324a059e4e105f4c8e0da6d2d5.jpg",
+        "https://i.pinimg.com/1200x/60/51/12/6051126258be4d305a3ee6e482d94150.jpg"
+      ],
+      "video": "https://media.rolex.com/video/upload/c_limit,q_auto:best,w_2880/vc_vp9/v1/rolexcom/collection/family-pages/professional-watches/submariner/family-page/2024/videos/cover/long-film/professional-watches-submariner-flagship-video-per_flag_submariner_21_a_60-uk_16x9-en-py-ly-cl-no_clock.webm",
       "case_material": "Oystersteel",
       "water_resistance": "300m"
     },
@@ -98,10 +192,12 @@
       "in_stock": true,
       "movement": "Caliber 4130",
       "case_material": "Oystersteel",
-      "gallery": ["https://media.rolex.com/image/upload/q_auto:eco/f_auto/c_limit,w_640/v1711477893/rolexcom/collection/family-pages/professional-watches/cosmograph-daytona/landing/roller-variety/professional-watches-cosmograph-daytona-a-legendary-design-oystersteel-m126500ln-0001_2301ac_001", "https://i.pinimg.com/736x/36/e9/b2/36e9b2a81a76b985425c68338dac9e45.jpg"],
+      "gallery": [
+        "https://media.rolex.com/image/upload/q_auto:eco/f_auto/c_limit,w_640/v1711477893/rolexcom/collection/family-pages/professional-watches/cosmograph-daytona/landing/roller-variety/professional-watches-cosmograph-daytona-a-legendary-design-oystersteel-m126500ln-0001_2301ac_001",
+        "https://i.pinimg.com/736x/36/e9/b2/36e9b2a81a76b985425c68338dac9e45.jpg"
+      ],
       "video": "https://media.rolex.com/video/upload/c_limit,q_auto:best,w_2880/vc_vp9/v1/rolexcom/collection/family-pages/professional-watches/cosmograph-daytona/landing/videos/cover/long-film/video-cover_2022-retailer-film-cosmograph-daytona-film-30-version-c-16x9-texted-clock-py-ly.webm",
       "water_resistance": "100m"
-      
     },
     {
       "id": "r3",
@@ -113,7 +209,10 @@
       "in_stock": true,
       "movement": "Caliber 3285",
       "case_material": "Oystersteel",
-      "gallery": ["https://i.pinimg.com/736x/c9/42/19/c942193d48894724a33fa6585008f49d.jpg", "https://i.pinimg.com/736x/2f/a7/a9/2fa7a930fd747e749c4a3831d528c466.jpg"],
+      "gallery": [
+        "https://i.pinimg.com/736x/c9/42/19/c942193d48894724a33fa6585008f49d.jpg",
+        "https://i.pinimg.com/736x/2f/a7/a9/2fa7a930fd747e749c4a3831d528c466.jpg"
+      ],
       "video": "https://media.rolex.com/video/upload/c_limit,q_auto:good,w_2880/vc_vp9/v1/rolexcom/collection/family-pages/professional-watches/gmt-master-ii/family-page/videos/cover/2024/long-film/video-cover_2022-retailer-film-gmt-master-ii-film-30-version-c-16x9-texted-clock-py-ly.webm",
       "water_resistance": "100m"
     },
@@ -127,7 +226,10 @@
       "in_stock": true,
       "movement": "Caliber 3285",
       "case_material": "Oystersteel",
-      "gallery": ["https://i.pinimg.com/1200x/63/ad/11/63ad11bf53462bafa9cea48d3db43359.jpg", "https://i.pinimg.com/736x/53/03/5f/53035f5909804526fcff936ecd61dfc4.jpg"],
+      "gallery": [
+        "https://i.pinimg.com/1200x/63/ad/11/63ad11bf53462bafa9cea48d3db43359.jpg",
+        "https://i.pinimg.com/736x/53/03/5f/53035f5909804526fcff936ecd61dfc4.jpg"
+      ],
       "video": "https://media.rolex.com/video/upload/c_limit,q_auto:best,w_2880/vc_vp9/v1/rolexcom/collection/family-pages/classic-watches/sky-dweller/landing/videos/cover/long-film/video-cover_2022-retailer-film-sky-dweller-film-30-version-c-16x9-texted-clock-py-ly.webm",
       "water_resistance": "100m"
     },
@@ -141,7 +243,10 @@
       "in_stock": true,
       "movement": "Caliber 3285",
       "case_material": "Oystersteel",
-      "gallery": ["https://i.pinimg.com/1200x/57/47/be/5747bea680bd9d965561ac9e386a8be6.jpg", "https://i.pinimg.com/1200x/37/c2/14/37c214cc85b025adc9f8cec839b4addb.jpg"],
+      "gallery": [
+        "https://i.pinimg.com/1200x/57/47/be/5747bea680bd9d965561ac9e386a8be6.jpg",
+        "https://i.pinimg.com/1200x/37/c2/14/37c214cc85b025adc9f8cec839b4addb.jpg"
+      ],
       "video": "https://media.rolex.com/video/upload/c_limit,q_auto:best,w_2880/vc_vp9/v1/rolexcom/collection/family-pages/professional-watches/cosmograph-daytona/landing/videos/cover/long-film/video-cover_2022-retailer-film-cosmograph-daytona-film-30-version-c-16x9-texted-clock-py-ly.webm",
       "water_resistance": "100m"
     },
@@ -155,7 +260,10 @@
       "in_stock": true,
       "movement": "Caliber 3285",
       "case_material": "Oystersteel",
-      "gallery": ["https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7/c_limit,w_1200/v1/catalogue/2025/showcase/m226570-0001", "https://i.pinimg.com/1200x/30/5e/6f/305e6fc567663d2ebf952fbd6b9d98c7.jpg"],
+      "gallery": [
+        "https://media.rolex.com/image/upload/q_auto:eco/f_auto/t_v7/c_limit,w_1200/v1/catalogue/2025/showcase/m226570-0001",
+        "https://i.pinimg.com/1200x/30/5e/6f/305e6fc567663d2ebf952fbd6b9d98c7.jpg"
+      ],
       "video": "https://v1.pinimg.com/videos/mc/720p/c7/e3/90/c7e390e9fe1a1474b8aa284bd37fa8ec.mp4",
       "water_resistance": "100m"
     },
@@ -169,7 +277,10 @@
       "in_stock": true,
       "movement": "Caliber 3285",
       "case_material": "Oystersteel",
-      "gallery": ["https://media.rolex.com/image/upload/q_auto:eco/f_auto/c_limit,w_1920/v1730388633/rolexcom/collection/family-pages/professional-watches/air-king/family-page/2024/professional-watches-air-king-continual-improvement-m126900-0001_2410alb_0001", "https://i.pinimg.com/736x/a7/9d/d6/a79dd627192a3e69878fa556aa987eea.jpg"],
+      "gallery": [
+        "https://media.rolex.com/image/upload/q_auto:eco/f_auto/c_limit,w_1920/v1730388633/rolexcom/collection/family-pages/professional-watches/air-king/family-page/2024/professional-watches-air-king-continual-improvement-m126900-0001_2410alb_0001",
+        "https://i.pinimg.com/736x/a7/9d/d6/a79dd627192a3e69878fa556aa987eea.jpg"
+      ],
       "video": "https://media.rolex.com/video/upload/c_limit,q_auto:best,w_2880/vc_vp9/v1/rolexcom/collection/family-pages/professional-watches/air-king/family-page/videos/cover/long-film/video-cover_2022-retailer-film-air-king-film-30-16x9-texted-no-clock-py-ly.webm",
       "water_resistance": "100m"
     },
@@ -183,7 +294,10 @@
       "in_stock": true,
       "movement": "Caliber 3285",
       "case_material": "Oystersteel",
-      "gallery": ["https://media.rolex.com/image/upload/q_auto:eco/f_auto/c_limit,w_1920/v1722242022/rolexcom/collection/family-pages/classic-watches/day-date/family-page/2024/classic-watches-day-date-10079_SV_RSA_DayDate_36_M128235_0050", "https://i.pinimg.com/736x/0d/4d/f6/0d4df6bbb2abde228f27663560700fda.jpg"],
+      "gallery": [
+        "https://media.rolex.com/image/upload/q_auto:eco/f_auto/c_limit,w_1920/v1722242022/rolexcom/collection/family-pages/classic-watches/day-date/family-page/2024/classic-watches-day-date-10079_SV_RSA_DayDate_36_M128235_0050",
+        "https://i.pinimg.com/736x/0d/4d/f6/0d4df6bbb2abde228f27663560700fda.jpg"
+      ],
       "video": "https://media.rolex.com/video/upload/c_limit,q_auto:best,w_2880/vc_vp9/v1/rolexcom/collection/family-pages/classic-watches/day-date/family-page/videos/cover/long-film/video-cover_2022-retailer-film-day-date-film-version-c-30-16x9-texted-clock-py-ly.webm",
       "water_resistance": "100m"
     },
@@ -197,7 +311,10 @@
       "in_stock": true,
       "movement": "ETA C07.611",
       "case_material": "Plasma high-tech ceramic",
-      "gallery": ["https://www.rado.com/media/sgecom_contentsystem/PDP_Images/cc_htc_chrono_r32190153_bico_carousel_3.jpg?im=Resize=(1024,682),aspect=fill;Crop=(0,0,1024,682),gravity=Center", "https://www.rado.com/media/sgecom_contentsystem/PDP_Images/cc_htc_chrono_r32190153_bico_carousel_2.jpg?im=Resize=(1024,682),aspect=fill;Crop=(0,0,1024,682),gravity=Center"],
+      "gallery": [
+        "https://www.rado.com/media/sgecom_contentsystem/PDP_Images/cc_htc_chrono_r32190153_bico_carousel_3.jpg?im=Resize=(1024,682),aspect=fill;Crop=(0,0,1024,682),gravity=Center",
+        "https://www.rado.com/media/sgecom_contentsystem/PDP_Images/cc_htc_chrono_r32190153_bico_carousel_2.jpg?im=Resize=(1024,682),aspect=fill;Crop=(0,0,1024,682),gravity=Center"
+      ],
       "video": "https://www.rado.com/media/sgecom_contentsystem/PDP_Images/Captain_Cook_HTC_Chronograph_chrono_bico_1920X1080.mp4",
       "water_resistance": "200m"
     },
@@ -211,7 +328,10 @@
       "in_stock": true,
       "movement": "Automatic R808",
       "case_material": "High-tech ceramic",
-      "gallery": ["https://i.pinimg.com/736x/ed/38/6d/ed386d570171a480ac28c0cb8b3b34ed.jpg", "https://i.pinimg.com/736x/8e/e5/b9/8ee5b97e2f1ae64c8b8a298637632c20.jpg"],
+      "gallery": [
+        "https://i.pinimg.com/736x/ed/38/6d/ed386d570171a480ac28c0cb8b3b34ed.jpg",
+        "https://i.pinimg.com/736x/8e/e5/b9/8ee5b97e2f1ae64c8b8a298637632c20.jpg"
+      ],
       "video": "https://v1.pinimg.com/videos/mc/720p/d7/26/4a/d7264ae853a606b477c42d8f3ba3d2f4.mp4",
       "water_resistance": "50m"
     },
@@ -225,7 +345,10 @@
       "in_stock": true,
       "movement": "Automatic R808",
       "case_material": "High-tech ceramic",
-      "gallery": ["https://i.pinimg.com/1200x/0e/2b/ca/0e2bca7c92dd3d8da2536d2d8b752aec.jpg", "https://www.rado.com/media/catalog/product/h/y/hyperchrome_r32022152_wrist_c.png?im=AspectCrop=(1300,1300),allowExpansion,location=(0.5,0.5);Resize=(1300,1300),aspect=fill;Crop=(0,0,1300,1300),gravity=Center"],
+      "gallery": [
+        "https://i.pinimg.com/1200x/0e/2b/ca/0e2bca7c92dd3d8da2536d2d8b752aec.jpg",
+        "https://www.rado.com/media/catalog/product/h/y/hyperchrome_r32022152_wrist_c.png?im=AspectCrop=(1300,1300),allowExpansion,location=(0.5,0.5);Resize=(1300,1300),aspect=fill;Crop=(0,0,1300,1300),gravity=Center"
+      ],
       "video": "https://v1.pinimg.com/videos/mc/expMp4/49/03/76/49037625f7a29946759f95fb7523b19c_t1.mp4",
       "water_resistance": "50m"
     },
@@ -239,7 +362,10 @@
       "in_stock": true,
       "movement": "Automatic R808",
       "case_material": "High-tech ceramic",
-      "gallery": ["https://www.rado.com/media/sgecom_contentsystem/PDP_Images/cc_htc_chrono_r32190153_bico_carousel_3.jpg?im=Resize=(1024,682),aspect=fill;Crop=(0,0,1024,682),gravity=Center", "https://www.rado.com/media/sgecom_contentsystem/PDP_Images/cc_htc_chrono_r32190153_bico_carousel_2.jpg?im=Resize=(1024,682),aspect=fill;Crop=(0,0,1024,682),gravity=Center"],
+      "gallery": [
+        "https://www.rado.com/media/sgecom_contentsystem/PDP_Images/cc_htc_chrono_r32190153_bico_carousel_3.jpg?im=Resize=(1024,682),aspect=fill;Crop=(0,0,1024,682),gravity=Center",
+        "https://www.rado.com/media/sgecom_contentsystem/PDP_Images/cc_htc_chrono_r32190153_bico_carousel_2.jpg?im=Resize=(1024,682),aspect=fill;Crop=(0,0,1024,682),gravity=Center"
+      ],
       "video": "https://www.rado.com/media/sgecom_contentsystem/PDP_Images/Captain_Cook_HTC_Chronograph_chrono_bico_1920X1080.mp4",
       "water_resistance": "50m"
     },
@@ -253,7 +379,10 @@
       "in_stock": true,
       "movement": "Automatic R808",
       "case_material": "High-tech ceramic",
-      "gallery": ["https://www.rado.com/media/catalog/product/d/i/diamasterthinline_r14068186_a.png?im=AspectCrop=(1300,1300),allowExpansion,location=(0.5,0.5);Resize=(1300,1300),aspect=fill;Crop=(0,0,1300,1300),gravity=Center", "https://www.rado.com/media/catalog/product/r/g/rgb_cat_diamaster_772_0138_3_420_3.png?im=AspectCrop=(1300,1300),allowExpansion,location=(0.5,0.5);Resize=(1300,1300),aspect=fill;Crop=(0,0,1300,1300),gravity=Center"],
+      "gallery": [
+        "https://www.rado.com/media/catalog/product/d/i/diamasterthinline_r14068186_a.png?im=AspectCrop=(1300,1300),allowExpansion,location=(0.5,0.5);Resize=(1300,1300),aspect=fill;Crop=(0,0,1300,1300),gravity=Center",
+        "https://www.rado.com/media/catalog/product/r/g/rgb_cat_diamaster_772_0138_3_420_3.png?im=AspectCrop=(1300,1300),allowExpansion,location=(0.5,0.5);Resize=(1300,1300),aspect=fill;Crop=(0,0,1300,1300),gravity=Center"
+      ],
       "video": "https://www.rado.com/media/sgecom_contentsystem/PDP_Images/Captain_Cook_HTC_Chronograph_chrono_bico_1920X1080.mp4",
       "water_resistance": "50m"
     },
@@ -267,7 +396,10 @@
       "in_stock": true,
       "movement": "Automatic R808",
       "case_material": "High-tech ceramic",
-      "gallery": ["https://www.rado.com/media/catalog/product/h/y/hyperchrome_r32156013_a.png?im=AspectCrop=(1300,1300),allowExpansion,location=(0.5,0.5);Resize=(1300,1300),aspect=fill;Crop=(0,0,1300,1300),gravity=Center", "https://i.pinimg.com/1200x/37/f0/44/37f0444714cebdab1f7c2c52fc33720d.jpg"],
+      "gallery": [
+        "https://www.rado.com/media/catalog/product/h/y/hyperchrome_r32156013_a.png?im=AspectCrop=(1300,1300),allowExpansion,location=(0.5,0.5);Resize=(1300,1300),aspect=fill;Crop=(0,0,1300,1300),gravity=Center",
+        "https://i.pinimg.com/1200x/37/f0/44/37f0444714cebdab1f7c2c52fc33720d.jpg"
+      ],
       "video": "https://www.rado.com/media/sgecom_contentsystem/PDP_Images/Captain_Cook_HTC_Chronograph_chrono_bico_1920X1080.mp4",
       "water_resistance": "50m"
     },
@@ -281,7 +413,10 @@
       "in_stock": true,
       "movement": "Automatic R808",
       "case_material": "High-tech ceramic",
-      "gallery": ["https://i.pinimg.com/1200x/40/b1/b4/40b1b47fc71554cd3a03b19e6ba865f6.jpg", "https://www.rado.com/media/catalog/product/h/y/hyperchrome_r32157152_wrist_f.png?im=AspectCrop=(1300,1300),allowExpansion,location=(0.5,0.5);Resize=(1300,1300),aspect=fill;Crop=(0,0,1300,1300),gravity=Center"],
+      "gallery": [
+        "https://i.pinimg.com/1200x/40/b1/b4/40b1b47fc71554cd3a03b19e6ba865f6.jpg",
+        "https://www.rado.com/media/catalog/product/h/y/hyperchrome_r32157152_wrist_f.png?im=AspectCrop=(1300,1300),allowExpansion,location=(0.5,0.5);Resize=(1300,1300),aspect=fill;Crop=(0,0,1300,1300),gravity=Center"
+      ],
       "video": "https://www.rado.com/media/sgecom_contentsystem/PDP_Images/Captain_Cook_HTC_Chronograph_chrono_bico_1920X1080.mp4",
       "water_resistance": "50m"
     },
@@ -295,7 +430,10 @@
       "in_stock": true,
       "movement": "Automatic R808",
       "case_material": "High-tech ceramic",
-      "gallery": ["https://www.rado.com/media/catalog/product/c/e/centrix_r30012202_a.png?im=AspectCrop=(1300,1300),allowExpansion,location=(0.5,0.5);Resize=(1300,1300),aspect=fill;Crop=(0,0,1300,1300),gravity=Center", "https://www.rado.com/media/sgecom_contentsystem/collection_pages/centrix/new-centrix-image-card.jpg?im=Resize=(775,565),aspect=fill;Crop=(0,0,775,565),gravity=Center"],
+      "gallery": [
+        "https://www.rado.com/media/catalog/product/c/e/centrix_r30012202_a.png?im=AspectCrop=(1300,1300),allowExpansion,location=(0.5,0.5);Resize=(1300,1300),aspect=fill;Crop=(0,0,1300,1300),gravity=Center",
+        "https://www.rado.com/media/sgecom_contentsystem/collection_pages/centrix/new-centrix-image-card.jpg?im=Resize=(775,565),aspect=fill;Crop=(0,0,775,565),gravity=Center"
+      ],
       "video": "https://www.rado.com/media/sgecom_contentsystem/PDP_Images/Captain_Cook_HTC_Chronograph_chrono_bico_1920X1080.mp4",
       "water_resistance": "50m"
     },
@@ -309,7 +447,10 @@
       "in_stock": true,
       "movement": "Caliber 26-330 S C",
       "case_material": "Rose gold",
-      "gallery": ["https://patek-res.cloudinary.com/dfsmedia/0906caea301d42b3b8bd23bd656d1711/268831-51883", "https://patek-res.cloudinary.com/dfsmedia/0906caea301d42b3b8bd23bd656d1711/268445-51883"],
+      "gallery": [
+        "https://patek-res.cloudinary.com/dfsmedia/0906caea301d42b3b8bd23bd656d1711/268831-51883",
+        "https://patek-res.cloudinary.com/dfsmedia/0906caea301d42b3b8bd23bd656d1711/268445-51883"
+      ],
       "video": "https://patek-res.cloudinary.com/video/upload/f_auto:video/dfsmedia/0906caea301d42b3b8bd23bd656d1711/305097-source/pp-7010-1g-013-screen-16-9-product-film.mp4",
       "water_resistance": "120m"
     },
@@ -323,7 +464,10 @@
       "in_stock": true,
       "movement": "Caliber 30-255 PS",
       "case_material": "White gold",
-      "gallery": ["https://patek-res.cloudinary.com/dfsmedia/0906caea301d42b3b8bd23bd656d1711/175678-51883", "https://patek-res.cloudinary.com/dfsmedia/0906caea301d42b3b8bd23bd656d1711/175236-51883"],
+      "gallery": [
+        "https://patek-res.cloudinary.com/dfsmedia/0906caea301d42b3b8bd23bd656d1711/175678-51883",
+        "https://patek-res.cloudinary.com/dfsmedia/0906caea301d42b3b8bd23bd656d1711/175236-51883"
+      ],
       "video": "https://patek-res.cloudinary.com/video/upload/f_auto:video/dfsmedia/0906caea301d42b3b8bd23bd656d1711/4723-source/pp-4997-200g-001-screen-16-9-product-film.mp4",
       "water_resistance": "30m"
     },
@@ -337,7 +481,10 @@
       "in_stock": true,
       "movement": "Caliber 30-255 PS",
       "case_material": "White gold",
-      "gallery": ["https://i.pinimg.com/736x/2c/48/fb/2c48fb324a059e4e105f4c8e0da6d2d5.jpg", "https://i.pinimg.com/1200x/60/51/12/6051126258be4d305a3ee6e482d94150.jpg"],
+      "gallery": [
+        "https://i.pinimg.com/736x/2c/48/fb/2c48fb324a059e4e105f4c8e0da6d2d5.jpg",
+        "https://i.pinimg.com/1200x/60/51/12/6051126258be4d305a3ee6e482d94150.jpg"
+      ],
       "video": "https://v1.pinimg.com/videos/mc/expMp4/49/03/76/49037625f7a29946759f95fb7523b19c_t1.mp4",
       "water_resistance": "30m"
     },
@@ -351,7 +498,10 @@
       "in_stock": true,
       "movement": "Caliber 30-255 PS",
       "case_material": "White gold",
-      "gallery": ["https://i.pinimg.com/736x/2c/48/fb/2c48fb324a059e4e105f4c8e0da6d2d5.jpg", "https://i.pinimg.com/1200x/60/51/12/6051126258be4d305a3ee6e482d94150.jpg"],
+      "gallery": [
+        "https://i.pinimg.com/736x/2c/48/fb/2c48fb324a059e4e105f4c8e0da6d2d5.jpg",
+        "https://i.pinimg.com/1200x/60/51/12/6051126258be4d305a3ee6e482d94150.jpg"
+      ],
       "video": "https://v1.pinimg.com/videos/mc/expMp4/49/03/76/49037625f7a29946759f95fb7523b19c_t1.mp4",
       "water_resistance": "30m"
     },
@@ -365,7 +515,10 @@
       "in_stock": true,
       "movement": "Caliber 30-255 PS",
       "case_material": "White gold",
-      "gallery": ["https://i.pinimg.com/736x/2c/48/fb/2c48fb324a059e4e105f4c8e0da6d2d5.jpg", "https://i.pinimg.com/1200x/60/51/12/6051126258be4d305a3ee6e482d94150.jpg"],
+      "gallery": [
+        "https://i.pinimg.com/736x/2c/48/fb/2c48fb324a059e4e105f4c8e0da6d2d5.jpg",
+        "https://i.pinimg.com/1200x/60/51/12/6051126258be4d305a3ee6e482d94150.jpg"
+      ],
       "video": "https://v1.pinimg.com/videos/mc/expMp4/49/03/76/49037625f7a29946759f95fb7523b19c_t1.mp4",
       "water_resistance": "30m"
     },
@@ -379,7 +532,10 @@
       "in_stock": true,
       "movement": "Caliber 30-255 PS",
       "case_material": "White gold",
-      "gallery": ["https://i.pinimg.com/736x/2c/48/fb/2c48fb324a059e4e105f4c8e0da6d2d5.jpg", "https://i.pinimg.com/1200x/60/51/12/6051126258be4d305a3ee6e482d94150.jpg"],
+      "gallery": [
+        "https://i.pinimg.com/736x/2c/48/fb/2c48fb324a059e4e105f4c8e0da6d2d5.jpg",
+        "https://i.pinimg.com/1200x/60/51/12/6051126258be4d305a3ee6e482d94150.jpg"
+      ],
       "video": "https://v1.pinimg.com/videos/mc/expMp4/49/03/76/49037625f7a29946759f95fb7523b19c_t1.mp4",
       "water_resistance": "30m"
     },
@@ -393,7 +549,10 @@
       "in_stock": true,
       "movement": "Caliber 30-255 PS",
       "case_material": "White gold",
-      "gallery": ["https://i.pinimg.com/736x/2c/48/fb/2c48fb324a059e4e105f4c8e0da6d2d5.jpg", "https://i.pinimg.com/1200x/60/51/12/6051126258be4d305a3ee6e482d94150.jpg"],
+      "gallery": [
+        "https://i.pinimg.com/736x/2c/48/fb/2c48fb324a059e4e105f4c8e0da6d2d5.jpg",
+        "https://i.pinimg.com/1200x/60/51/12/6051126258be4d305a3ee6e482d94150.jpg"
+      ],
       "video": "https://v1.pinimg.com/videos/mc/expMp4/49/03/76/49037625f7a29946759f95fb7523b19c_t1.mp4",
       "water_resistance": "30m"
     },
@@ -407,7 +566,10 @@
       "in_stock": true,
       "movement": "Caliber 30-255 PS",
       "case_material": "White gold",
-      "gallery": ["https://i.pinimg.com/736x/2c/48/fb/2c48fb324a059e4e105f4c8e0da6d2d5.jpg", "https://i.pinimg.com/1200x/60/51/12/6051126258be4d305a3ee6e482d94150.jpg"],
+      "gallery": [
+        "https://i.pinimg.com/736x/2c/48/fb/2c48fb324a059e4e105f4c8e0da6d2d5.jpg",
+        "https://i.pinimg.com/1200x/60/51/12/6051126258be4d305a3ee6e482d94150.jpg"
+      ],
       "video": "https://v1.pinimg.com/videos/mc/expMp4/49/03/76/49037625f7a29946759f95fb7523b19c_t1.mp4",
       "water_resistance": "30m"
     }
