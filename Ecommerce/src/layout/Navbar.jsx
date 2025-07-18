@@ -2,8 +2,9 @@ import React, { useState, useEffect, useContext, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { FaRegHeart, FaTimes, FaBars } from "react-icons/fa";
-import { BsBoxArrowRight, BsPerson, BsPersonCircle } from "react-icons/bs";
+import { BsBoxArrowRight, BsPerson, BsPersonCircle, BsClockHistory } from "react-icons/bs";
 import { AuthContext } from "../common/context/Authprovider";
+import { PackageCheck } from "lucide-react";
 
 function Navbar() {
   const { setUser, logout, user, cartCount } = useContext(AuthContext);
@@ -117,6 +118,14 @@ function Navbar() {
 
         {/* Desktop Icons */}
         <ul className="flex items-center space-x-4 lg:space-x-6">
+          {user && (
+            <li className="relative hidden lg:block">
+              <Link to="/orders">
+                <BsClockHistory className={`text-lg ${iconColor}`} />
+              </Link>
+            </li>
+          )}
+          
           <li className="relative hidden lg:block">
             <Link to="/wishlist">
               <FaRegHeart className={`text-lg ${iconColor}`} />
@@ -146,6 +155,14 @@ function Navbar() {
                 </div>
                 {dropdownOpen && (
                   <div className="absolute right-0 mt-2 w-44 bg-white rounded-lg shadow-xl z-50">
+                    <Link
+                      to="/orders"
+                      onClick={() => setDropdownOpen(false)}
+                      className="flex items-center gap-2 px-4 py-2 w-full text-sm text-gray-800 font-light hover:bg-gray-50 hover:text-black rounded-md transition-colors duration-200"
+                    >
+                      <BsClockHistory className="w-4 h-4" />
+                      My Orders
+                    </Link>
                     <button
                       onClick={handleLogout}
                       className="flex items-center gap-2 px-4 py-2 w-full text-sm text-gray-800 font-light hover:bg-gray-50 hover:text-black rounded-md transition-colors duration-200"
@@ -178,6 +195,17 @@ function Navbar() {
           >
             Collections
           </Link>
+
+          {user && (
+            <Link
+              to="/orders"
+              onClick={() => setIsMenuOpen(false)}
+              className="block border-b pb-3 uppercase text-sm tracking-wider flex items-center gap-2"
+            >
+              <BsClockHistory />
+              My Orders
+            </Link>
+          )}
 
           <Link
             to="/wishlist"

@@ -7,6 +7,7 @@ import axios from "axios";
 function Cart() {
   const { user, setUser } = useContext(AuthContext);
   const [loading, setLoading] = useState(true);
+  const [updating, setUpdating] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -30,34 +31,41 @@ function Cart() {
     fetchUser();
   }, [user?.id, setUser]);
 
-  const handleRemove = async (id) => {
-    const updatedCart = user.cart.filter((item) => item.id !== id);
+  const updateCartInDB = async (updatedCart) => {
     try {
       const res = await axios.patch(`http://localhost:5000/users/${user.id}`, {
         cart: updatedCart,
       });
-      if (res.status === 200) setUser({ ...user, cart: updatedCart });
+      if (res.status === 200) {
+        setUser({ ...user, cart: updatedCart });
+      }
+      return true;
     } catch (error) {
       console.error("Failed to update cart:", error);
+      return false;
+    } finally {
+      setUpdating(false);
     }
   };
 
-  const handleQuantityChange = async (id, newQuantity) => {
-    // Ensure quantity doesn't go below 1
-    if (newQuantity < 1) return;
+  const handleRemove = async (id) => {
+    setUpdating(true);
+    const updatedCart = user.cart.filter((item) => item.id !== id);
+    await updateCartInDB(updatedCart);
+  };
 
+  const handleQuantityChange = async (id, newQuantity) => {
+    if (newQuantity < 1) {
+      // If quantity would go to 0, remove the item instead
+      await handleRemove(id);
+      return;
+    }
+
+    setUpdating(true);
     const updatedCart = user.cart.map((item) =>
       item.id === id ? { ...item, quantity: newQuantity } : item
     );
-
-    try {
-      const res = await axios.patch(`http://localhost:5000/users/${user.id}`, {
-        cart: updatedCart,
-      });
-      if (res.status === 200) setUser({ ...user, cart: updatedCart });
-    } catch (error) {
-      console.error("Failed to update quantity:", error);
-    }
+    await updateCartInDB(updatedCart);
   };
 
   const getTotal = () => {
@@ -146,6 +154,7 @@ function Cart() {
                       onClick={() => handleRemove(item.id)}
                       className="text-gray-400 hover:text-black transition-colors"
                       title="Remove"
+                      disabled={updating}
                     >
                       <Trash2 className="w-5 h-5" />
                     </button>
@@ -158,19 +167,21 @@ function Cart() {
                     <div className="flex items-center space-x-4">
                       <div className="flex items-center border border-gray-200 rounded">
                         <button
-                          className="px-3 py-1 text-gray-500 hover:text-gray-900"
+                          className="px-3 py-1 text-gray-500 hover:text-gray-900 disabled:opacity-50"
                           onClick={() =>
                             handleQuantityChange(item.id, item.quantity - 1)
                           }
+                          disabled={updating}
                         >
                           -
                         </button>
                         <span className="px-4">{item.quantity}</span>
                         <button
-                          className="px-3 py-1 text-gray-500 hover:text-gray-900"
+                          className="px-3 py-1 text-gray-500 hover:text-gray-900 disabled:opacity-50"
                           onClick={() =>
                             handleQuantityChange(item.id, item.quantity + 1)
                           }
+                          disabled={updating}
                         >
                           +
                         </button>
@@ -215,11 +226,18 @@ function Cart() {
 
               <button
                 onClick={() =>
-                  navigate("/payment", { state: { totalAmount: getTotal() } })
+                  navigate("/payment", {
+                    state: {
+                      totalAmount: getTotal(),
+                      cartItems: user.cart,
+                      userId: user.id
+                    }
+                  })
                 }
-                className="w-full mt-6 px-6 py-3 bg-gray-700 text-white text-xs font-bold tracking-widest uppercase hover:bg-gray-800 transition-colors duration-300 border border-black"
+                className="w-full mt-6 px-6 py-3 bg-gray-700 text-white text-xs font-bold tracking-widest uppercase hover:bg-gray-800 transition-colors duration-300 border border-black disabled:opacity-50"
+                disabled={updating || getTotalItems() === 0}
               >
-                Secure Checkout
+                {updating ? "UPDATING..." : "SECURE CHECKOUT"}
               </button>
 
               <p className="text-xs text-gray-500 mt-4 text-center">

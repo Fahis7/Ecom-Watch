@@ -12,6 +12,7 @@ import Wishlist from "./nonAuth/WishList";
 import PaymentPage from "./nonAuth/PaymentPage";
 import ErrorResponse from "./nonAuth/ErrorResponse";
 import Confirmation from "./nonAuth/Confirmation";
+import OrdersPage from "./nonAuth/ordersPage";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/payment" element={<PaymentPage />} />
+          <Route path="/orders" element={<OrdersPage />} />
         </Route>
       </Routes>
     </>

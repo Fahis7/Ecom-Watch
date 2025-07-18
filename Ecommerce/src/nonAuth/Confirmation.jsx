@@ -60,10 +60,10 @@ const AnimatedTick = () => {
 };
 
 const Confirmation = () => {
-  const [totalAmount,settotalamount]=useState(0)
+  const [totalAmount, settotalamount] = useState(0);
   const navigate = useNavigate();
-const { setCartCount } = useContext(AuthContext);
- const clearCart = async () => {
+  const { setCartCount } = useContext(AuthContext);
+  const clearCart = async () => {
     try {
       // Clear cart in db.json
       await axios.patch(`http://localhost:5000/users/${user.id}`, { cart: [] });
@@ -75,31 +75,30 @@ const { setCartCount } = useContext(AuthContext);
     }
   };
 
-useEffect(() => {
-  const fetchOrderSum = async () => {
-    try {
-      const response = await fetch(`http://localhost:5000/users/${user.id}`);
-      const data = await response.json();
-      const orders = data.cart || [];
+  useEffect(() => {
+    const fetchOrderSum = async () => {
+      try {
+        const response = await fetch(`http://localhost:5000/users/${user.id}`);
+        const data = await response.json();
+        const orders = data.cart || [];
 
-      const totalSum = orders.reduce(
-        (sum, item) => sum + Number(item.price || 0),
-        0
-      );
+        const totalSum = orders.reduce(
+          (sum, item) => sum + Number(item.price*item.quantity || 0),
+          0
+        );
 
-      settotalamount(totalSum);
+        settotalamount(totalSum);
+        console.log("Order Total:", totalSum);
 
-      // ✅ Clear cart immediately after fetching total
-     await clearCart();
+        // ✅ Clear cart immediately after fetching total
+        await clearCart();
+      } catch (error) {
+        console.error("Failed to fetch orders:", error);
+      }
+    };
 
-    } catch (error) {
-      console.error("Failed to fetch orders:", error);
-    }
-  };
-
-  fetchOrderSum();
-}, []);
-
+    fetchOrderSum();
+  }, []);
 
   const user = JSON.parse(localStorage.getItem("user"));
   useEffect(() => {
