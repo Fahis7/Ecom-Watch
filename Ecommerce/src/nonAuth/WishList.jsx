@@ -1,13 +1,20 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../common/context/Authprovider";
 import axios from "axios";
 import { Heart } from "lucide-react";
 
 const Wishlist = () => {
   const { user, setUser } = useContext(AuthContext);
+  const navigate = useNavigate()
   window.scrollTo(0, 0);
 
+    useEffect(() => {
+      if (!user || !user.id) {
+        navigate("/login");
+      }
+    }, [user, navigate]);
+  
   const handleRemove = async (productId) => {
     const updatedWishlist = user.wishlist.filter((item) => item.id !== productId);
     try {

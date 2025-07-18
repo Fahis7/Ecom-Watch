@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Formik, Form, Field, ErrorMessage } from "formik";
@@ -6,10 +6,19 @@ import axios from "axios";
 import * as Yup from "yup";
 import { UserRegisterTemplate } from "../../../data/template/UserRegisterTemplate";
 import { Eye, EyeOff } from "lucide-react";
+import { AuthContext } from "../../context/Authprovider";
 
 function Register() {
   const navigate = useNavigate();
+  const { user } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }else{
+      navigate("/")
+    }
+  }, [user]);
 
   const initialValues = UserRegisterTemplate;
 
@@ -51,7 +60,8 @@ function Register() {
   };
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-auto">
+    <div className="relative min-h-screen flex items-center justify-center px-4 sm:px-8 md:px-16 lg:px-[15%]">
+      {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-bottom"
         style={{
@@ -60,12 +70,13 @@ function Register() {
       ></div>
       <div className="absolute inset-0 bg-black opacity-60"></div>
 
-      <div className="relative z-10 w-full px-4 sm:px-6 md:px-10 lg:px-[15%] py-10">
+      {/* Card */}
+      <div className="relative z-10 w-full max-w-5xl">
         <motion.div
           initial={{ opacity: 0, x: -90 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="bg-white/20 backdrop-blur-md rounded-[12px] shadow-xl flex flex-col lg:flex-row overflow-hidden max-w-5xl mx-auto"
+          className="bg-white/20 backdrop-blur-md rounded-[12px] shadow-xl flex flex-col lg:flex-row overflow-hidden h-auto lg:h-[500px]"
         >
           {/* Left Form */}
           <div className="w-full lg:w-1/2 p-6 sm:p-8 flex flex-col justify-center text-white drop-shadow-md">
@@ -108,27 +119,24 @@ function Register() {
                     />
                   </div>
 
-                  {/* Password Field with Eye Toggle */}
-                  <div className="space-y-1">
-                    <div className="relative">
-                      <Field
-                        type={showPassword ? "text" : "password"}
-                        name="password"
-                        placeholder="Password"
-                        className="w-full px-4 py-2 pr-10 bg-transparent border text-white border-gray-300 rounded-xl focus:outline-none"
-                      />
-                      <button
-                        type="button"
-                        onClick={() => setShowPassword(!showPassword)}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 text-white"
-                      >
-                        {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-                      </button>
-                    </div>
+                  <div className="relative">
+                    <Field
+                      type={showPassword ? "text" : "password"}
+                      name="password"
+                      placeholder="Password"
+                      className="w-full px-4 py-2 bg-transparent border text-white border-gray-300 rounded-xl focus:outline-none pr-12"
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword((prev) => !prev)}
+                      className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white"
+                    >
+                      {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+                    </button>
                     <ErrorMessage
                       name="password"
                       component="div"
-                      className="text-sm text-red-400"
+                      className="text-sm text-red-400 mt-1"
                     />
                   </div>
 
@@ -147,7 +155,6 @@ function Register() {
               Already have an account?{" "}
               <a
                 href="/login"
-                style={{ textDecoration: "none" }}
                 className="text-white font-medium hover:underline"
               >
                 Login
@@ -157,7 +164,7 @@ function Register() {
 
           {/* Right Image */}
           <div
-            className="w-full lg:w-1/2 h-64 lg:h-auto bg-cover bg-center"
+            className="w-full lg:w-1/2 h-[200px] lg:h-auto bg-cover bg-center"
             style={{
               backgroundImage: `url(https://media.rolex.com/image/upload/q_auto/f_auto/c_limit,w_1920/v1741014185/rolexcom/new-watches/2025/watches/new-dials/new-watches-2025-new-dials-gmt-master-ii-iron-eye-dial-m126715chnr-0002_2501stojan_002_rvb.jpg)`,
               backgroundSize: "200%",

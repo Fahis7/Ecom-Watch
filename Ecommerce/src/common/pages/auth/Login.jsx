@@ -8,18 +8,16 @@ import { Eye, EyeOff } from "lucide-react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/Authprovider";
 
-function Login() {
+function Login() { 
+    const { login, user } = useContext(AuthContext);
+
   const navigate = useNavigate();
   useEffect(() => {
-    const storedUser = JSON.parse(localStorage.getItem("user"));
-    if (storedUser) {
+    if (user) {
       navigate("/");
-    } else {
-      navigate("/login");
     }
-  }, []);
+  }, [user]);
 
-  const { login } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
 
   const initialValues = {
