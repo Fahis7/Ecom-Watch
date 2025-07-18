@@ -6,6 +6,8 @@ export const AuthContext = createContext();
 export default function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [cartCount, setCartCount] = useState(0);
+  const [totalAmount, setTotalAmount] = useState(0);
+
   const navigate = useNavigate();
 
   // Load user from localStorage on mount
@@ -44,7 +46,7 @@ export default function AuthProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, setUser, login, logout, cartCount }}>
+    <AuthContext.Provider value={{ user, setUser, login, logout, cartCount,setCartCount,totalAmount, setTotalAmount }}>
       {children}
     </AuthContext.Provider>
   );

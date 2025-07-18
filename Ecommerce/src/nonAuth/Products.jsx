@@ -36,6 +36,7 @@ function Products() {
   const colors = [...new Set(products.flatMap((product) => product.color))];
 
   useEffect(() => {
+    window.scrollTo(0,0)
     const fetchProducts = async () => {
       const data = await GetProducts();
       setProducts(data);

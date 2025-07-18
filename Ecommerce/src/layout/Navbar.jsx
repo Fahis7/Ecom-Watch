@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { FaRegHeart, FaTimes, FaBars } from "react-icons/fa";
-import { BsBoxArrowRight, BsPerson,} from "react-icons/bs";
+import { BsBoxArrowRight, BsPerson, BsPersonCircle } from "react-icons/bs";
 import { AuthContext } from "../common/context/Authprovider";
 
 function Navbar() {
@@ -10,9 +10,10 @@ function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
   const dropdownRef = useRef(null);
+  const mobileMenuRef = useRef(null);
 
   const isAuthPage =
-    location.pathname === "/login" || location.pathname === "/signup";
+    location.pathname === "/login" || location.pathname === "/signup" ;
   if (isAuthPage) return null;
 
   const isScrollEffectPage =
@@ -50,6 +51,21 @@ function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isScrollEffectPage]);
+
+  // Close mobile menu if clicked outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (
+        isMenuOpen &&
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target)
+      ) {
+        setIsMenuOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isMenuOpen]);
 
   const navbarClasses = isScrollEffectPage
     ? `fixed w-full top-0 z-50 transition-all duration-500 ${
@@ -152,11 +168,8 @@ function Navbar() {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div
-          className={`lg:hidden fixed top-[72px] inset-x-0 z-40 p-6 space-y-4 ${
-            isScrollEffectPage && !isScrolled
-              ? "bg-white text-black"
-              : "bg-white text-black"
-          }`}
+          ref={mobileMenuRef}
+          className={`lg:hidden fixed top-[72px] inset-x-0 z-40 p-6 space-y-4 bg-white text-black`}
         >
           <Link
             to="/products"

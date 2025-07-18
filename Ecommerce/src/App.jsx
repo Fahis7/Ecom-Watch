@@ -9,6 +9,9 @@ import MainLayout from "./layout/MainLayout";
 import Cart from "./nonAuth/Cart";
 import { Toaster } from "react-hot-toast";
 import Wishlist from "./nonAuth/WishList";
+import PaymentPage from "./nonAuth/PaymentPage";
+import ErrorResponse from "./nonAuth/ErrorResponse";
+import Confirmation from "./nonAuth/Confirmation";
 
 function App() {
   return (
@@ -20,14 +23,18 @@ function App() {
         {/* Routes without Navbar/Footer */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Register />} />
+        <Route path="/confirmation" element={<Confirmation />} />
+
 
         {/* Routes with Navbar/Footer wrapped in MainLayout */}
         <Route element={<MainLayout />}>
+          <Route path="*" element={<ErrorResponse />} />
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<Products />} />
           <Route path="/product/:id" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/payment" element={<PaymentPage />} />
         </Route>
       </Routes>
     </>

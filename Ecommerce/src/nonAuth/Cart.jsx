@@ -214,8 +214,10 @@ function Cart() {
               </div>
 
               <button
-                onClick={() => navigate("/checkout")}
-                className="w-full mt-6 px-6 py-3  bg-gray-700 text-white text-xs font-bold tracking-widest uppercase hover:bg-gray-800 transition-colors duration-300 border border-black"
+                onClick={() =>
+                  navigate("/payment", { state: { totalAmount: getTotal() } })
+                }
+                className="w-full mt-6 px-6 py-3 bg-gray-700 text-white text-xs font-bold tracking-widest uppercase hover:bg-gray-800 transition-colors duration-300 border border-black"
               >
                 Secure Checkout
               </button>
