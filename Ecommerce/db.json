@@ -1,18 +1,6 @@
 {
   "users": [
     {
-      "id": "4e58",
-      "name": "subru",
-      "email": "subru@gmail.com",
-      "password": "123456789",
-      "role": "User",
-      "isBlock": false,
-      "cart": [],
-      "orders": [],
-      "wishlist": [],
-      "created_at": "2025-07-15T14:54:08.753Z"
-    },
-    {
       "id": "87e8",
       "name": "Mohammed Rinshad",
       "email": "rinshad@gmail.com",
@@ -924,7 +912,8 @@
       "password": "@Abdulazeez1",
       "role": "User",
       "isBlock": false,
-      "cart": [
+      "cart": [],
+      "orders": [
         {
           "id": "r2",
           "name": "Rolex Daytona",
@@ -944,8 +933,43 @@
           "quantity": 1
         }
       ],
-      "orders": [],
-      "wishlist": [],
+      "wishlist": [
+        {
+          "id": "ra4",
+          "name": "Rado Captain Cook",
+          "description": "Rado Captain Cook revives a vintage diving icon with modern flair. Featuring a rotating bezel, domed sapphire crystal, and automatic movement, it’s a bold blend of heritage design and contemporary craftsmanship—perfect for adventure seekers with style.",
+          "price": 1950,
+          "brand": "Rado",
+          "image": "https://www.rado.com/media/catalog/product/c/a/captaincook_r32190153_sld_web_1.png?im=AspectCrop=(1300,1300),allowExpansion,location=(0.5,0.5);Resize=(1300,1300),aspect=fill;Crop=(0,0,1300,1300),gravity=Center",
+          "in_stock": true,
+          "movement": "Automatic R808",
+          "color": "black",
+          "gallery": [
+            "https://www.rado.com/media/sgecom_contentsystem/PDP_Images/cc_htc_chrono_r32190153_bico_carousel_3.jpg?im=Resize=(1024,682),aspect=fill;Crop=(0,0,1024,682),gravity=Center",
+            "https://www.rado.com/media/sgecom_contentsystem/PDP_Images/cc_htc_chrono_r32190153_bico_carousel_2.jpg?im=Resize=(1024,682),aspect=fill;Crop=(0,0,1024,682),gravity=Center"
+          ],
+          "video": "https://www.rado.com/media/sgecom_contentsystem/PDP_Images/Captain_Cook_HTC_Chronograph_chrono_bico_1920X1080.mp4",
+          "water_resistance": "50m"
+        },
+        {
+          "id": "ra6",
+          "name": "Rado Hyperchrome",
+          "description": " Rado HyperChrome blends cutting-edge ceramic technology with sporty elegance. Featuring a sleek, scratch-resistant case, automatic movement, and dynamic chronograph options, it’s built for both performance and style.",
+          "price": 1950,
+          "brand": "Rado",
+          "image": "https://www.rado.com/media/catalog/product/h/y/hyperchrome_r32156013_sld_web.png?im=AspectCrop=(1300,1300),allowExpansion,location=(0.5,0.5);Resize=(1300,1300),aspect=fill;Crop=(0,0,1300,1300),gravity=Center",
+          "in_stock": true,
+          "movement": "Automatic R808",
+          "color": "silver",
+          "gallery": [
+            "https://www.rado.com/media/catalog/product/h/y/hyperchrome_r32156013_a.png?im=AspectCrop=(1300,1300),allowExpansion,location=(0.5,0.5);Resize=(1300,1300),aspect=fill;Crop=(0,0,1300,1300),gravity=Center",
+            "https://i.pinimg.com/1200x/37/f0/44/37f0444714cebdab1f7c2c52fc33720d.jpg"
+          ],
+          "video": "https://www.rado.com/media/sgecom_contentsystem/PDP_Images/Captain_Cook_HTC_Chronograph_chrono_bico_1920X1080.mp4",
+          "water_resistance": "50m",
+          "quantity": 1
+        }
+      ],
       "created_at": "2025-07-19T14:57:35.679Z"
     },
     {

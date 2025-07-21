@@ -1,5 +1,5 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function NotFoundPage() {
   const navigate = useNavigate();
@@ -16,9 +16,19 @@ function NotFoundPage() {
 
       {/* Luxury brand crest */}
       <div className="absolute top-8 left-0 right-0 flex justify-center space-x-10 opacity-30">
-        <svg className="w-16 h-16" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="32" cy="32" r="30" stroke="#C0C0C0" strokeWidth="1"/>
-          <path d="M32 12L40 32L32 52L24 32L32 12Z" stroke="#C0C0C0" strokeWidth="1" fill="none"/>
+        <svg
+          className="w-16 h-16"
+          viewBox="0 0 64 64"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle cx="32" cy="32" r="30" stroke="#C0C0C0" strokeWidth="1" />
+          <path
+            d="M32 12L40 32L32 52L24 32L32 12Z"
+            stroke="#C0C0C0"
+            strokeWidth="1"
+            fill="none"
+          />
         </svg>
       </div>
 
@@ -30,20 +40,20 @@ function NotFoundPage() {
           <div className="absolute inset-0 rounded-full border border-platinum shadow-inner"></div>
           <div className="absolute inset-6 rounded-full border border-gold opacity-30"></div>
           <div className="absolute inset-12 rounded-full border border-platinum opacity-20"></div>
-          
+
           {/* Hour markers */}
           {[...Array(12)].map((_, i) => (
-            <div 
+            <div
               key={i}
               className="absolute w-px h-3 bg-platinum"
               style={{
                 transform: `rotate(${i * 30}deg) translateY(-28px)`,
-                top: '50%',
-                left: '50%'
+                top: "50%",
+                left: "50%",
               }}
             />
           ))}
-          
+
           {/* 404 text with watch-like typography */}
           <span className="text-7xl font-thin text-charcoal tracking-tight relative">
             <span className="text-gold">4</span>
@@ -56,18 +66,22 @@ function NotFoundPage() {
           PAGE NOT FOUND
         </h1>
         <p className="text-sm font-light text-charcoal opacity-80 mb-12 max-w-md mx-auto leading-relaxed">
-          The horological masterpiece you seek is not at this exhibition. 
-          Our master watchmakers suggest these alternatives:
+          The horological masterpiece you seek is not at this exhibition. Our
+          master watchmakers suggest these alternatives:
         </p>
 
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <button
-            onClick={() => navigate('/')}
-            className="px-12 py-3 border border-charcoal text-charcoal text-sm font-light tracking-widest hover:bg-charcoal hover:text-ivory transition-all duration-300 flex items-center justify-center"
+            onClick={() => navigate("/")}
+            className="px-12 py-3 border border-charcoal text-charcoal text-sm font-light tracking-widest cursor-pointer 
+             hover:bg-gray-700 hover:text-white hover:border-charcoal 
+             transition-all duration-300 flex items-center justify-center group"
           >
-            <span className="mr-2">⟵</span> VIEW COLLECTION
+            <span className="mr-2 transition-transform duration-300 group-hover:-translate-x-1">
+              ⟵
+            </span>
+            HOROLOGIE
           </button>
-          
         </div>
 
         <div className="mt-24 pt-8 border-t border-platinum border-opacity-30">

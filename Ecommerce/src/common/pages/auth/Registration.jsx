@@ -118,19 +118,25 @@ function Register() {
                   </div>
 
                   <div className="relative">
-                    <Field
-                      type={showPassword ? "text" : "password"}
-                      name="password"
-                      placeholder="Password"
-                      className="w-full px-4 py-2 bg-transparent border text-white border-gray-300 rounded-xl focus:outline-none pr-12"
-                    />
-                    <button
-                      type="button"
-                      onClick={() => setShowPassword((prev) => !prev)}
-                      className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white"
-                    >
-                      {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
-                    </button>
+                    <div className="relative">
+                      <Field
+                        type={showPassword ? "text" : "password"}
+                        name="password"
+                        placeholder="Password"
+                        className="w-full px-4 py-2 pr-12 bg-transparent border text-white border-gray-300 rounded-xl focus:outline-none"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => setShowPassword((prev) => !prev)}
+                        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white"
+                      >
+                        {showPassword ? (
+                          <EyeOff size={18} />
+                        ) : (
+                          <Eye size={18} />
+                        )}
+                      </button>
+                    </div>
                     <ErrorMessage
                       name="password"
                       component="div"
