@@ -2,12 +2,11 @@ import React, { useEffect } from "react";
 import Navbar from "../../layout/Navbar";
 import { Link } from "react-router-dom";
 
-
 function Home() {
-  useEffect(()=>{
-    window.scrollTo(0,0)
-  },[])
-  return (  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+  return (
     <div id="heritage" className="bg-[#faf9f5]">
       <Navbar />
       <div className="text-gray-800 font-serif">
@@ -51,7 +50,7 @@ function Home() {
             <div className="flex justify-center space-x-6">
               <Link
                 to="/products"
-                className="bg-transparent border border-white text-white px-8 py-3 rounded-none hover:bg-white/10 transition-all duration-300 text-lg font-light tracking-wider uppercase opacity-80"
+                className="bg-transparent border border-white text-white px-8 py-3 rounded-none hover:bg-white/10 transition-all duration-300 text-lg font-extrabold tracking-wider uppercase opacity-80"
               >
                 Explore Collections
               </Link>
@@ -111,10 +110,10 @@ function Home() {
                   desc: "The Oyster Perpetual Cosmograph Daytona in platinum with an ice-blue dial",
                 },
                 {
-                  name: "Rado Captain Cook High Tech Ceramic Skeleton",
+                  name: "Rado Captain Cook Ceramic Skeleton",
                   image:
                     "https://i.pinimg.com/1200x/52/32/62/523262305e9299699f5edf5af496789b.jpg",
-                  desc: "German precision with jumping numerals display",
+                  desc: "A bold 43 mm ceramic diver with a lightweight monobloc case, skeletonized R808 automatic movement",
                 },
               ].map((watch, index) => (
                 <div key={index} className="group relative overflow-hidden">
@@ -158,20 +157,33 @@ function Home() {
                     Our Heritage
                   </span>
                 </h2>
-                <p className="text-gray-500 font-light mb-6 leading-relaxed">
+                <h3 className="text-xl text-gray-600 font-light mb-4">
+                  A Century of Timeless Tradition
+                </h3>
+                <p className="text-gray-500 font-light mb-4 leading-relaxed">
                   Since 1924, we have been custodians of horological excellence.
                   Our family has built relationships with the finest
                   watchmakers, bringing unparalleled craftsmanship to discerning
                   collectors.
                 </p>
-                <p className="text-gray-500 font-light mb-8 leading-relaxed">
-                  Each timepiece we offer is more than an instrument of time -
+                <p className="text-gray-500 font-light mb-4 leading-relaxed">
+                  Each timepiece we offer is more than an instrument of time —
                   it's a legacy, a story, and an heirloom for generations to
                   come.
                 </p>
+                <p className="text-gray-500 font-light mb-6 leading-relaxed">
+                  Rooted in heritage, our philosophy embraces authenticity and
+                  precision. Every watch is a reflection of our enduring passion
+                  for detail, elegance, and the pursuit of excellence in the art
+                  of timekeeping.
+                </p>
+                <blockquote className="text-gray-600 italic border-l-4 border-gold-500 pl-4 mb-8">
+                  “Preserving the past, inspiring the future — one timepiece at
+                  a time.”
+                </blockquote>
                 <Link
                   to={`/products`}
-                  className=" bg-gray-700 border  text-white px-6 py-2 hover:bg-white hover:text-black transition duration-300 font-light tracking-wider opacity-85"
+                  className="bg-gray-700 border text-white px-6 py-2 hover:bg-white hover:text-black transition duration-300 font-light tracking-wider opacity-85"
                 >
                   Be Our Fam
                 </Link>
@@ -180,8 +192,8 @@ function Home() {
                 <div className="relative before:absolute before:inset-0 before:border-2 before:border-gold-500 before:translate-x-6 before:translate-y-6 before:z-0">
                   <img
                     src="https://i.pinimg.com/736x/a7/b0/7c/a7b07c09035140becd5cf407f77a85a4.jpg"
-                    alt="Watchmaker"
-                    className="relative z-10 w-full h-auto object-cover"
+                    alt="Watchmaker at work"
+                    className="relative z-10 w-full h-auto object-cover rounded"
                   />
                 </div>
               </div>
@@ -189,7 +201,6 @@ function Home() {
           </div>
         </section>
       </div>
-  
     </div>
   );
 }

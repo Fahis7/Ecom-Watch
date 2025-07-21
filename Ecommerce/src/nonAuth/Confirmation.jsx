@@ -114,8 +114,8 @@ const Confirmation = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black opacity-70 z-10"></div>
         <video autoPlay loop muted className="w-full h-full object-cover">
           <source
-            src="https://www.rado.com/media/sgecom_contentsystem/PDP_Images/Captain_Cook_HTC_Chronograph_chrono_bico_1920X1080.mp4"
-            type="video/mp4"
+            src="https://media.rolex.com/video/upload/c_limit,q_auto:eco,w_2880/vc_vp9/v1/rolexcom/new-watches/2025/watches/new-dials/videos/player-expand/long-film/new-watches-2025-new-dials-presentation-long-film.webm"
+            type="video/webm"
           />
         </video>
         <div className="absolute bottom-1/4 left-0 right-0 z-20 px-8 text-center">
@@ -190,12 +190,22 @@ const Confirmation = () => {
             </ul>
           </div>
 
-          <button
-            onClick={() => navigate("/")}
-            className="w-full bg-gray-700 text-white py-2 px-4 text-xs font-light tracking-widest hover:bg-gray-800 transition-all duration-300"
-          >
-            RETURN TO COLLECTION
-          </button>
+          <div className="flex gap-4">
+  <button
+    onClick={() => navigate("/")}
+    className="w-1/2 bg-gray-700 text-white py-2 px-4 text-xs font-light tracking-widest hover:bg-gray-800 transition-all duration-300"
+  >
+    RETURN TO HOROLOGIE
+  </button>
+
+  <button
+    onClick={() => navigate("/orders")}
+    className="w-1/2 bg-gray-700 text-white py-2 px-4 text-xs font-light tracking-widest hover:bg-gray-800 transition-all duration-300"
+  >
+    VIEW ORDERS
+  </button>
+</div>
+
 
           <div className="mt-6 text-xxs font-light text-charcoal opacity-50">
             <p>

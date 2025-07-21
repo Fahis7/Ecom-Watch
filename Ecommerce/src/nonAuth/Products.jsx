@@ -97,7 +97,7 @@ function Products() {
               <button
                 key={brand}
                 onClick={() => setSelectedBrand(brand)}
-                className={`px-4 py-2 text-sm uppercase tracking-wider transition-colors ${
+                className={`px-4 py-2 text-sm uppercase cursor-pointer tracking-wider transition-colors ${
                   selectedBrand === brand
                     ? "text-gold-400 border-b-2 border-gold-400"
                     : "text-gray-500 hover:text-gray-700"
@@ -118,7 +118,7 @@ function Products() {
                 onClick={() =>
                   setSelectedColor(selectedColor === color ? "" : color)
                 }
-                className={`px-4 py-2 text-[12px] uppercase tracking-wider transition-colors ${
+                className={`px-4 py-2 text-[12px] uppercase cursor-pointer tracking-wider transition-colors ${
                   selectedColor === color
                     ? "text-gold-400 border-b-2 border-gold-400"
                     : "text-gray-500 hover:text-gray-700"

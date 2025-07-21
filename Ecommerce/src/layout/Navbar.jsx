@@ -118,13 +118,7 @@ function Navbar() {
 
         {/* Desktop Icons */}
         <ul className="flex items-center space-x-4 lg:space-x-6">
-          {user && (
-            <li className="relative hidden lg:block">
-              <Link to="/orders">
-                <BsClockHistory className={`text-lg ${iconColor}`} />
-              </Link>
-            </li>
-          )}
+          
           
           <li className="relative hidden lg:block">
             <Link to="/wishlist">
